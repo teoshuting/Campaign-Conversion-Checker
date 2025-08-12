@@ -19,7 +19,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, acergae time-to-conersion,etc) 
 
-[IN PROGRESS]
+    [in progress]
 
 
 ---
@@ -64,8 +64,12 @@ http://localhost:8080
 ```
 
 <span style="color: #2E86C1;">Notes:</span><br>
-Runs locally; no external storage.
-For deployment, update API_BASE in index.html to your backend URL.
+- Runs locally, no external storage. <br>
+- For deployment, update API_BASE in index.html to your backend URL.<br>
+- 
 
 <span style="color: #2E86C1;">License:</span><br>
 This project is licensed under the MIT License.
+
+
+Happy Converting! 
