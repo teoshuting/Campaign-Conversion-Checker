@@ -1,9 +1,9 @@
-## <span style="color: #2E86C1;"> ✨ Campaign Conversion Checker ✨ </span>
+## <span style="color: #2E86C1;"> ☆ Campaign Conversion Checker ☆ </span>
 Say goodbye to spreadsheet headaches, strained eyeballs and endless “just checking in” emails. I built a web-based bestie that instantly cross-checks campaign leads with your master opportunity list so you can see exactly which campaign leads have converted! 💅
 
 ---
 
-### Features ⋆˚࿔
+### Features 𐙚
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
@@ -11,7 +11,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 2. **Upload Campaign File** – Leads generated from a specific campaign.
 ![Upload Master File](/images/step_2.png)
 
-3. **⚙Campaign Parameters** – Start date, query period, distributor, and target country.
+3. **Campaign Parameters** – Start date, query period, distributor, and target country.
 ![Upload Master File](/images/step_3.png)
 
 4. **Automated Matching** – Finds leads that became business opportunities.
@@ -24,7 +24,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### Tech Stack ⋆˙⟡
+### Tech Stack 𐙚
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Python (Flask)  
@@ -33,7 +33,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### Project Structure ⋆. 𐙚 ˚
+### Project Structure 𐙚
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
 └── README.md # Project documentation<br>
@@ -41,7 +41,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### <span style="color: #2E86C1;">Instructions! LETS GOOOO 🚀 </span>
+### <span style="color: #2E86C1;">Instructions 𐙚⋆°｡⋆♡ </span>
 
 1. **Clone the repository:**
 ```bash
