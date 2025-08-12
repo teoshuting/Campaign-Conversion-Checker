@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Conversion Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 2px solid #e8f4f8;
+            border-radius: 10px;
+            background: #f8fdff;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .upload-area {
+            border: 3px dashed #3498db;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            background: #f0f8ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            border-color: #2980b9;
+            background: #e8f4f8;
+        }
+
+        .upload-area.dragover {
+            border-color: #27ae60;
+            background: #e8f5e8;
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #cce7ff;
+            color: #004085;
+            border: 1px solid #99d6ff;
+        }
+
+        .results-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .results-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .results-section h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .results-table th, .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .results-table th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+
+        .results-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .summary {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .summary h4 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+            margin-top: 15px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Campaign Conversion Checker</h1>
+            <p>Track leads from campaigns and match them with business opportunities</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Step 1: Upload Master File -->
+            <div class="step">
+                <h3>Step 1: Upload Master Excel File</h3>
+                <div class="upload-area" onclick="document.getElementById('masterFile').click()" 
+                     ondrop="handleDrop(event, 'master')" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                    <div class="upload-icon">📄</div>
+                    <p><strong>Click to upload or drag & drop your master Excel file</strong></p>
+                    <p>Should contain: Registration ID, Main Distributor, Registration Date, Resale Customer, Country Resale Customer</p>
+                </div>
+                <input type="file" id="masterFile" accept=".xlsx,.xls" style="display: none;" onchange="uploadFile('master')">
+                <div id="masterStatus"></div>
+            </div>
+
+            <!-- Step 2: Upload Campaign File -->
+            <div class="step">
+                <h3>Step 2: Upload Campaign-Specific Excel File</h3>
+                <div class="upload-area" onclick="document.getElementById('campaignFile').click()"
+                     ondrop="handleDrop(event, 'campaign')" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                    <div class="upload-icon">📄</div>
+                    <p><strong>Click to upload or drag & drop your campaign Excel file</strong></p>
+                    <p><strong>Required format:</strong> First Name, Last Name, Email, Company</p>
+                </div>
+                <input type="file" id="campaignFile" accept=".xlsx,.xls" style="display: none;" onchange="uploadFile('campaign')">
+                <div id="campaignStatus"></div>
+                <div class="note">
+                    <strong>Note:</strong> Campaign file should be in the stated format with columns: First Name, Last Name, Email, Company (case-insensitive)
+                </div>
+            </div>
+
+            <!-- Step 3: Campaign Details -->
+            <div class="step">
+                <h3>Step 3: Enter Campaign Details</h3>
+                <div class="form-group">
+                    <label for="startDate">Campaign Start Date:</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="queryPeriod">Query Period (days after start date):</label>
+                    <select id="queryPeriod" required>
+                        <option value="">-- Select Period --</option>
+                        <option value="30">30 Days</option>
+                        <option value="60">60 Days</option>
+                        <option value="90">90 Days</option>
+                        <option value="180" selected>180 Days (Default)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="distributor">Select Distributor:</label>
+                    <select id="distributor" required>
+                        <option value="">-- Select Distributor --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Target Country:</label>
+                    <input type="text" id="country" placeholder="e.g., Singapore, Malaysia, Thailand" required>
+                </div>
+                
+                <button class="btn" onclick="runQuery()" id="queryBtn" disabled>
+                    🔍 Find Matching Opportunities
+                </button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your query...</p>
+            </div>
+
+            <!-- Results -->
+            <div class="results-container" id="resultsContainer">
+                <div class="summary" id="summary"></div>
+            
+            <h5>Note: Matched Campaign Leads refer to the number of campaign leads that was found to have one business opportunity or more.</h5><br><br>
+
+
+                <!-- Matches Section -->
+                <div class="results-section" style="margin-bottom: 30px;" id="matchesSection">
+                    <h4>🎯 Potential Matches Found - Leads that became Business Opportunities!</h4>
+                    <div style="overflow-x: auto;">
+                        <table class="results-table" id="matchesResults">
+                            <thead>
+                                <tr>
+                                    <th>Contact Person</th>
+                                    <th>Email</th>
+                                    <th>Campaign Company</th>
+                                    <th>Resale Customer</th>
+                                    <th>Registration ID</th>
+                                    <th>Registration Date</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <h5>Note: User must review the matches to confirm if the 'Compaign Company' and 'Resale Customer' refers to the same entity.</h5>
+                </div>
+
+                <div class="results-grid">
+                    <div class="results-section">
+                        <h4>🎯 Business Opportunities Filtered</h4>
+                        <div style="overflow-x: auto;">
+                            <table class="results-table" id="masterResults">
+                                <thead>
+                                    <tr>
+                                        <th>Registration ID</th>
+                                        <th>Resale Customer</th>
+                                        <th>Registration Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                                            <div class="results-section">
+                        <h4>📊 All Campaign Leads</h4>
+                        <div style="overflow-x: auto;">
+                            <table class="results-table" id="campaignResults">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Company</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api';
+        
+        // Load distributors on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDistributors();
+            checkStatus();
+        });
+
+        async function loadDistributors() {
+            try {
+                const response = await fetch(`${API_BASE}/distributors`);
+                const data = await response.json();
+                const select = document.getElementById('distributor');
+                
+                data.distributors.forEach(dist => {
+                    const option = document.createElement('option');
+                    option.value = dist;
+                    option.textContent = dist;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading distributors:', error);
+            }
+        }
+
+        async function checkStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/status`);
+                const data = await response.json();
+                
+                if (data.master_file_uploaded && data.campaign_file_uploaded) {
+                    document.getElementById('queryBtn').disabled = false;
+                }
+            } catch (error) {
+                console.error('Error checking status:', error);
+            }
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(event) {
+            event.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(event, type) {
+            event.preventDefault();
+            event.currentTarget.classList.remove('dragover');
+            
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                const fileInput = document.getElementById(type + 'File');
+                fileInput.files = files;
+                uploadFile(type);
+            }
+        }
+
+        async function uploadFile(type) {
+            const fileInput = document.getElementById(type + 'File');
+            const statusDiv = document.getElementById(type + 'Status');
+            const file = fileInput.files[0];
+            
+            if (!file) return;
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            statusDiv.innerHTML = '<div class="status info">Uploading...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/upload/${type}`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    statusDiv.innerHTML = `
+                        <div class="status success">
+                            ✅ ${data.message}<br>
+                            Rows loaded: ${data.rows}
+                        </div>
+                    `;
+                    checkStatus();
+                } else {
+                    statusDiv.innerHTML = `
+                        <div class="status error">
+                            ❌ ${data.error}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `
+                    <div class="status error">
+                        ❌ Upload failed: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        async function runQuery() {
+            const startDate = document.getElementById('startDate').value;
+            const queryPeriod = document.getElementById('queryPeriod').value;
+            const distributor = document.getElementById('distributor').value;
+            const country = document.getElementById('country').value;
+            
+            if (!startDate || !queryPeriod || !distributor || !country) {
+                alert('Please fill in all campaign details.');
+                return;
+            }
+            
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultsContainer').style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE}/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        startDate: startDate,
+                        queryPeriod: parseInt(queryPeriod),
+                        distributor: distributor,
+                        country: country
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayResults(data);
+                } else {
+                    alert('Query failed: ' + data.error);
+                }
+            } catch (error) {
+                alert('Query failed: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function displayResults(data) {
+            // Update summary
+            const summary = document.getElementById('summary');
+            summary.innerHTML = `
+                <h4>📈 Query Results Summary</h4>
+                <p><strong>Period:</strong> ${data.query_params.start_date} to ${data.query_params.end_date} (${data.query_params.query_period} days)</p>
+                <p><strong>Distributor:</strong> ${data.query_params.distributor} | <strong>Country:</strong> ${data.query_params.country}</p>
+                <p><strong>Total Number of Campaign Leads:</strong> ${data.summary.campaign_leads} | <strong>Matched Campaign Leads:</strong> ${data.summary.matched_campaign_leads} |  <strong>Matched Business Opportunties:</strong> ${data.summary.matches_found}</p>
+            `;
+            
+            // Update matches table
+            const matchesTbody = document.querySelector('#matchesResults tbody');
+            matchesTbody.innerHTML = '';
+            
+            if (data.matches.length === 0) {
+                matchesTbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: #888;">No matches found between campaign leads and business opportunities</td></tr>';
+            } else {
+                data.matches.forEach(match => {
+                    const tr = document.createElement('tr');
+                    tr.style.backgroundColor = '#e8f5e8'; // Light green background for matches
+                    tr.innerHTML = `
+                        <td>${match.first_name} ${match.last_name}</td>
+                        <td>${match.email}</td>
+                        <td><strong>${match.company}</strong></td>
+                        <td><strong>${match.resale_customer}</strong></td>
+                        <td><strong>${match.registration_id}</strong></td>
+                        <td>${match.registration_date}</td>
+                    `;
+                    matchesTbody.appendChild(tr);
+                });
+            }
+            
+            // Update master results table
+            const masterTbody = document.querySelector('#masterResults tbody');
+            masterTbody.innerHTML = '';
+            
+            if (data.master_results.length === 0) {
+                masterTbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #888;">No opportunities found for this criteria</td></tr>';
+            } else {
+                data.master_results.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${row.registration_id}</td>
+                        <td>${row.resale_customer}</td>
+                        <td>${row.registration_date}</td>
+                    `;
+                    masterTbody.appendChild(tr);
+                });
+            }
+            
+            // Update campaign results table
+            const campaignTbody = document.querySelector('#campaignResults tbody');
+            campaignTbody.innerHTML = '';
+            
+            if (data.campaign_results.length === 0) {
+                campaignTbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #888;">No campaign leads found</td></tr>';
+            } else {
+                data.campaign_results.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${row.first_name} ${row.last_name}</td>
+                        <td>${row.email}</td>
+                        <td>${row.company}</td>
+                    `;
+                    campaignTbody.appendChild(tr);
+                });
+            }
+            
+            document.getElementById('resultsContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
