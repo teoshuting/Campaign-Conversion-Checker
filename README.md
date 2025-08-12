@@ -32,10 +32,13 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 ---
 
 ### ᯓᡣ𐭩 Project Structure
+├── images # For ReadMe
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
-└── README.md # Project documentation<br>
-
+├── README.md # Project documentation<br>
+└── sample_data # Synthetic data for user testing
+    ├── master_file.xlsx # Upload in Step 1
+    └── campaign_leads.xlsx # Upload in Step 2
 
 ---
 
@@ -64,7 +67,7 @@ http://localhost:8080
 #### Notes:
 - Runs locally, no external storage. <br>
 - For deployment, update API_BASE in index.html to your backend URL.<br>
-- 
+
 
 #### License: 
 This project is licensed under the MIT License.
