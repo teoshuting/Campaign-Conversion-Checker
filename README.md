@@ -3,7 +3,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-<span style="color: #2E86C1;"> Features</span>
+### Features ⋆˚࿔
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
@@ -24,7 +24,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### <span style="color: #2E86C1;">Tech Stack </span>
+### Tech Stack ⋆˙⟡
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Python (Flask)  
@@ -33,7 +33,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### <span style="color: #2E86C1;">Project Structure</span>
+### Project Structure ⋆. 𐙚 ˚
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
 └── README.md # Project documentation<br>
@@ -63,13 +63,13 @@ python app.py
 http://localhost:8080
 ```
 
-<span style="color: #2E86C1;">Notes:</span><br>
+#### Notes:
 - Runs locally, no external storage. <br>
 - For deployment, update API_BASE in index.html to your backend URL.<br>
 - 
 
-<span style="color: #2E86C1;">License:</span><br>
+#### License: 
 This project is licensed under the MIT License.
 
 
-Happy Converting! 
+Happy Converting! ⸜(｡˃ ᵕ ˂ )⸝♡
