@@ -3,7 +3,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### Features ᯓᡣ𐭩
+### ᯓᡣ𐭩 Features 
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
