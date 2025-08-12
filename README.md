@@ -17,14 +17,12 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 4. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
 
-5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, acergae time-to-conersion,etc) 
-
-    [in progress]
+5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, acergae time-to-conersion,etc) [in progress]
 
 
 ---
 
-### Tech Stack ᯓᡣ𐭩
+### ᯓᡣ𐭩 Tech Stack 
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Python (Flask)  
@@ -33,7 +31,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### Project Structure ᯓᡣ𐭩
+### ᯓᡣ𐭩 Project Structure
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
 └── README.md # Project documentation<br>
@@ -41,7 +39,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ---
 
-### Instructions ᯓᡣ𐭩
+### ᯓᡣ𐭩 Instructions 
 
 1. **Clone the repository:**
 ```bash
