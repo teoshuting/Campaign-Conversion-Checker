@@ -4,8 +4,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 ---
 
 ### ᯓᡣ𐭩 Features 
-You can try it out yourself with the (synthetic) sample data provided! <br>
-For the date, please choose any date in 2024 :)
+You can try it out yourself with the (synthetic) sample data provided! 
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
@@ -17,11 +16,10 @@ For the date, please choose any date in 2024 :)
 ![Upload Master File](/images/step_3.png)
 (If you are using the synthetic data, choose any date in 2024)
 <br>
-
-5. **Automated Matching** – Finds leads that became business opportunities.
+4. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
 
-6. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
+5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
 
 
 ---
