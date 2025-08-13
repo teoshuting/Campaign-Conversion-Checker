@@ -16,6 +16,7 @@ For the date, please choose any date in 2024 :)
 3. **Campaign Parameters** – Start date, query period, distributor, and target country.
 ![Upload Master File](/images/step_3.png)
 (If you are using the synthetic data, choose any date in 2024)
+<br>
 
 5. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
