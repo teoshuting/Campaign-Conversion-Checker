@@ -71,7 +71,7 @@ http://localhost:8080
 ```
 
 #### Notes:
-- Runs locally, no external storage. <br>
+- Runs locally, no stored database. <br>
 - For deployment, update API_BASE in index.html to your backend URL.<br>
 
 
