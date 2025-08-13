@@ -34,13 +34,16 @@ For the date, please choose any date in 2024 :)
 ---
 
 ### ᯓᡣ𐭩 Project Structure
-├── README.md # Project documentation<br>
-├── images # For ReadMe Demo <br>
-├── app.py # Flask backend server <br>
-├── index.html # Frontend UI<br>
-└── sample_data # Synthetic data for user testing <br>
-        ├── master_file.xlsx # Upload in Step 1 <br>
-        └── campaign_leads.xlsx # Upload in Step 2
+```
+├── README.md # Project documentation
+├── images # For ReadMe Demo
+├── app.py # Flask backend server
+├── index.html # Frontend UI
+└── sample_data # Synthetic data for user testing
+    ├── master_file.xlsx # Upload in Step 1
+    └── campaign_leads.xlsx # Upload in Step 2
+```
+
 
 ---
 
