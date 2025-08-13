@@ -1,9 +1,10 @@
 ## 𐙚 Campaign Conversion Checker 𐙚 
 Say goodbye to spreadsheet headaches, strained eyeballs and endless “just checking in” emails. I built a web-based bestie that instantly cross-checks campaign leads with your master opportunity list so you can see exactly which campaign leads have converted! 
-
 ---
 
 ### ᯓᡣ𐭩 Features 
+You can try it out yourself with the (synthetic) sample data provided! 
+For the date, please choose any date in 2024
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
@@ -37,8 +38,8 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
 └── sample_data # Synthetic data for user testing <br>
-    ├── master_file.xlsx # Upload in Step 1 <br>
-    └── campaign_leads.xlsx # Upload in Step 2
+        ├── master_file.xlsx # Upload in Step 1 <br>
+        └── campaign_leads.xlsx # Upload in Step 2
 
 ---
 
