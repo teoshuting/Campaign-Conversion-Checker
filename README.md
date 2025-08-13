@@ -2,23 +2,23 @@
 Say goodbye to spreadsheet headaches, strained eyeballs and endless emails. I built a web-based bestie that instantly cross-checks campaign leads with your master file containing all registered business opportunities so you can see exactly which campaign leads have converted! >ᴗ<
 
 ### The Lead Funnel 
-![Upload Master File](/images/lead-funnel.png)
+![lead funnel image](/images/lead-funnel.png)
 ---
 
 ### ᯓᡣ𐭩 Features 
 You can try it out yourself with the (synthetic) sample data provided! 
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
-![Upload Master File](/images/step_1.png)
+![image of step1](/images/step_1.png)
 
 2. **Upload Campaign File** – Leads generated from a specific campaign.
-![Upload Master File](/images/step_2.png)
+![image of step2](/images/step_2.png)
 
 3. **Campaign Parameters** – Start date, query period, distributor, and target country. (choose 2024 if you're using the sample data)
-![Upload Master File](/images/step_3.png)
+![image of step3](/images/step_3.png)
 
 4. **Automated Matching** – Finds leads that became business opportunities.
-![Upload Master File](/images/matches.png)
+![image of results](/images/matches.png)
 
 5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
 
