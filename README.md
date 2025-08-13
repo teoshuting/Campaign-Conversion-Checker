@@ -4,8 +4,8 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 ---
 
 ### ᯓᡣ𐭩 Features 
-You can try it out yourself with the (synthetic) sample data provided! 
-For the date, please choose any date in 2024
+You can try it out yourself with the (synthetic) sample data provided! <br>
+For the date, please choose any date in 2024 :)
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
