@@ -32,10 +32,10 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 ---
 
 ### ᯓᡣ𐭩 Project Structure
-├── images # For ReadMe <br>
+├── README.md # Project documentation<br>
+├── images # For ReadMe Demo <br>
 ├── app.py # Flask backend server <br>
 ├── index.html # Frontend UI<br>
-├── README.md # Project documentation<br>
 └── sample_data # Synthetic data for user testing <br>
     ├── master_file.xlsx # Upload in Step 1 <br>
     └── campaign_leads.xlsx # Upload in Step 2
