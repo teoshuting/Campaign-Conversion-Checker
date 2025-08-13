@@ -5,6 +5,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 
 ### ᯓᡣ𐭩 Features 
 You can try it out yourself with the (synthetic) sample data provided! 
+ * If you are using the synthetic data, choose any date in 2024.
 
 1. **Upload Master File** – Contains registration details of ALL business opportunities.
 ![Upload Master File](/images/step_1.png)
@@ -14,8 +15,6 @@ You can try it out yourself with the (synthetic) sample data provided!
 
 3. **Campaign Parameters** – Start date, query period, distributor, and target country.
 ![Upload Master File](/images/step_3.png)
-   * If you are using the synthetic data, choose any date in 2024)
-
 
 4. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
