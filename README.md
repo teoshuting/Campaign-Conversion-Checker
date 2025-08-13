@@ -1,6 +1,8 @@
 ## 𐙚 Campaign Conversion Checker 𐙚 
-Say goodbye to spreadsheet headaches, strained eyeballs and endless emails. I built a web-based bestie that instantly cross-checks campaign leads with your master opportunity list so you can see exactly which campaign leads have converted! >ᴗ<
+Say goodbye to spreadsheet headaches, strained eyeballs and endless emails. I built a web-based bestie that instantly cross-checks campaign leads with your master file containing all registered business opportunities so you can see exactly which campaign leads have converted! >ᴗ<
 
+### The Lead Funnel 
+![Upload Master File](/images/lead-funnel.png)
 ---
 
 ### ᯓᡣ𐭩 Features 
