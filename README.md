@@ -15,11 +15,12 @@ For the date, please choose any date in 2024 :)
 
 3. **Campaign Parameters** – Start date, query period, distributor, and target country.
 ![Upload Master File](/images/step_3.png)
+(If you are using the synthetic data, choose any date in 2024)
 
-4. **Automated Matching** – Finds leads that became business opportunities.
+5. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
 
-5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
+6. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
 
 
 ---
