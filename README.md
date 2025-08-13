@@ -1,4 +1,4 @@
-## <span style="color: #2E86C1;"> 𐙚 Campaign Conversion Checker 𐙚 </span>
+## 𐙚 Campaign Conversion Checker 𐙚 
 Say goodbye to spreadsheet headaches, strained eyeballs and endless “just checking in” emails. I built a web-based bestie that instantly cross-checks campaign leads with your master opportunity list so you can see exactly which campaign leads have converted! 
 
 ---
@@ -17,7 +17,7 @@ Say goodbye to spreadsheet headaches, strained eyeballs and endless “just chec
 4. **Automated Matching** – Finds leads that became business opportunities.
 ![Upload Master File](/images/matches.png)
 
-5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, acergae time-to-conersion,etc) [in progress]
+5. **Results Dashboard** – One-stop solution to determine campaign effectiveness (i.e cost per lead, lead-to-opportunity conversion, average time-to-conersion, etc) [in progress]
 
 
 ---
